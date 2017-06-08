@@ -5,8 +5,24 @@
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
+<body>
+  <div id="main-content">
+    <script id="quoteTemplate" type="text/template">
+  	  Quote: <%= quote %> — Theme: <%= theme %>
+    </script>
+
+    <div class="filter-btns">
+      <button value="movies">Movie quotes</button>
+      <button value="games">Game quotes</button>
+    </div>
+
+    <ul id="pagination"></ul>
+
+    <script src="quotes.js"></script>
+    <script src="pagination.js"></script>
+  </div>
 </body>
 </html>
