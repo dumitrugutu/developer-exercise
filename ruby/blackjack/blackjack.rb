@@ -2,27 +2,30 @@ class Card
   attr_accessor :suite, :name, :value
 
   def initialize(suite, name, value)
-    @suite, @name, @value = suite, name, value
+    @suite = suite
+    @name = name
+    @value = value
   end
 end
 
 class Deck
   attr_accessor :playable_cards
-  SUITES = [:hearts, :diamonds, :spades, :clubs]
+  SUITES = %i[hearts diamonds spades clubs]
   NAME_VALUES = {
-    :two   => 2,
-    :three => 3,
-    :four  => 4,
-    :five  => 5,
-    :six   => 6,
-    :seven => 7,
-    :eight => 8,
-    :nine  => 9,
-    :ten   => 10,
-    :jack  => 10,
-    :queen => 10,
-    :king  => 10,
-    :ace   => [11, 1]}
+    two:      2,
+    three:    3,
+    four:     4,
+    five:     5,
+    six:      6,
+    seven:    7,
+    eight:    8,
+    nine:     9,
+    ten:     10,
+    jack:    10,
+    queen:   10,
+    king:    10,
+    ace:    [11, 1]
+  }
 
   def initialize
     shuffle
@@ -92,11 +95,11 @@ class Game
 
   def status
     {
-      :player_cards => @player_hand.cards,
-      :player_value => @player_hand.value,
-      :dealer_cards => @dealer_hand.cards,
-      :dealer_value => @dealer_hand.value,
-      :winner => @winner
+      player_cards: @player_hand.cards,
+      player_value: @player_hand.value,
+      dealer_cards: @dealer_hand.cards,
+      dealer_value: @dealer_hand.value,
+      winner: @winner
     }
   end
 end
